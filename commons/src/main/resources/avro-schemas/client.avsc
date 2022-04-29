@@ -1,0 +1,36 @@
+{
+  "type":      "record",
+  "name":      "Client",
+  "namespace": "com.cloudmore.kafkatask.commons.avro.schema",
+  "fields":    [
+    {
+      "name":    "name",
+      "type":    {
+        "type":   "string",
+        "length": 250
+      },
+      "default": ""
+    },
+    {
+      "name":    "surname",
+      "type":    {
+        "type":   "string",
+        "length": 250
+      },
+      "default": ""
+    },
+    {
+      "name":    "wage",
+      "type":    "double",
+      "default": 0
+    },
+    {
+      "name":    "eventTime",
+      "type":    {
+        "type":        "long",
+        "logicalType": "timestamp-millis"
+      },
+      "default": 0
+    }
+  ]
+}

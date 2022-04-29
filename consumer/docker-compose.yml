@@ -1,0 +1,19 @@
+---
+version: '2'
+services:
+  kafka-consumer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kafka-consumer
+    hostname: kafka-consumer
+    restart: always
+    networks:
+      - confluent_default
+    environment:
+      BOOTSTRAP_SERVERS: 'http://broker:29092'
+      SCHEMA_REGISTRY: 'http://schema-registry:8081'
+      JDBC_URL: 'jdbc:mysql://mysql:3306/kafka'
+networks:
+  confluent_default:
+    external: true

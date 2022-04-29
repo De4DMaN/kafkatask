@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: sa
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
+    database: h2
+  liquibase:
+    enabled: true
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+    user: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
+    properties:
+      schema.registry.url: mock://localhost.org
+      auto.register.schemas: true
+
+app:
+  misc:
+    tax-percent: 12.5

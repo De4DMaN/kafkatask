@@ -1,0 +1,4 @@
+---
+services:
+  kafka-consumer:
+    container_name: kafka-consumer

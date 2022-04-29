@@ -1,0 +1,21 @@
+---
+version: '2'
+services:
+  mysql:
+    image: mysql:8
+    hostname: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    environment:
+      MYSQL_DATABASE: "kafka"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "pa"
+      MYSQL_ROOT_PASSWORD: "pa"
+    networks:
+      - confluent_default
+networks:
+  confluent_default:
+    external: true

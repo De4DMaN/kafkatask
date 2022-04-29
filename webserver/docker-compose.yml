@@ -1,0 +1,22 @@
+---
+version: '2'
+services:
+  kafka-webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kafka-webserver:latest
+    hostname: kafka-webserver
+    restart: always
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    networks:
+      - confluent_default
+    environment:
+      BOOTSTRAP_SERVERS: 'http://broker:29092'
+      SCHEMA_REGISTRY: 'http://schema-registry:8081'
+networks:
+  confluent_default:
+    external: true

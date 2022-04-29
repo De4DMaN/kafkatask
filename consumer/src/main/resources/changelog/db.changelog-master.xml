@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <property name="now"
+              value="now()"
+              dbms="h2"/>
+    <property name="now"
+              value="current_timestamp"
+              dbms="postgresql"/>
+    <property name="now"
+              value="unix_timestamp()"
+              dbms="mssql"/>
+    <property name="clobType"
+              value="longvarchar"
+              dbms="h2"/>
+    <property name="clobType"
+              value="clob"
+              dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType"
+              value="uuid"
+              dbms="h2, postgresql"/>
+    <property name="uuidType"
+              value="uniqueidentifier"
+              dbms="mssql"/>
+
+    <include file="db.changelog-0.1.xml"
+             relativeToChangelogFile="true"/>
+</databaseChangeLog>

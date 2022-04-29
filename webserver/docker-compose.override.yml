@@ -1,0 +1,4 @@
+---
+services:
+  kafka-webserver:
+    container_name: kafka-webserver

@@ -1,0 +1,4 @@
+---
+services:
+  mysql:
+    container_name: mysql

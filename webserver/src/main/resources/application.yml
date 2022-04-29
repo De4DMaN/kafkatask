@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    properties:
+      schema.registry.url: ${SCHEMA_REGISTRY:http://localhost:8081}
+    bootstrap-servers: ${BOOTSTRAP_SERVERS:http://localhost:9092}
+  application:
+    name: webserver
+
+app:
+  kafka:
+    topic: client-topic
+
+server:
+  port: 8080

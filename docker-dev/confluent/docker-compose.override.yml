@@ -1,0 +1,16 @@
+---
+services:
+  zookeeper:
+    container_name: zookeeper
+  broker:
+    container_name: broker
+  schema-registry:
+    container_name: schema-registry
+  connect:
+    container_name: connect
+  control-center:
+    container_name: control-center
+  ksqldb-server:
+    container_name: ksqldb-server
+  rest-proxy:
+    container_name: rest-proxy
